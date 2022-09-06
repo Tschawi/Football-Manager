@@ -9,3 +9,14 @@
 .Title{
     font-size: 100px;
 }
+.Anzeige{
+    display: flex;
+    justify-content: space-around;
+}
+.score{
+    font-size: 100px;
+}
+.Logo{
+    width: 300px;
+    height: 300px;
+}
