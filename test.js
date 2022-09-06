@@ -47,6 +47,13 @@ gamesim(tm1, tm2);
 function gamesim(Home, Away){
   let goalshome = 0;
   let goalsaway = 0;
+  console.log(Home);
+  Home.players.forEach(player => {
+    document.getElementById('Hometm').innerHTML += "<p>" + player.name + " " + player.rating+ "</p>";
+  });
+  Away.players.forEach(player => {
+    document.getElementById('Awaytm').innerHTML += "<p>" + player.name + " " + player.rating+ "</p>";
+  });
   for(let minutes = 0; minutes < 90; minutes++){
     //Laliga Durchschnittlich 2.5 Goals pro Match
     //jede Minute 0.0277777% Chanche uf Goal
@@ -60,4 +67,5 @@ function gamesim(Home, Away){
   }
   document.getElementById('score').innerHTML = goalshome + ":" + goalsaway;
 }
+
 
