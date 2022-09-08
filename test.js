@@ -1,3 +1,4 @@
+
 class Team {
     constructor(name, league) {
       this.name = name;
@@ -30,19 +31,32 @@ class Team {
       return this._rating;
     }
   }
-
-var a = [];
-var tm1 = new Team("FC Barcelona", "LaLiga");
-var tm2 = new Team("Real Madrid", "LaLiga");
-var pl11 = new Player("Pedri", "FC Barcelona", 84);
-tm1.addPlayer(pl11);
-var pl12 = new Player("Lewandowski", "FC Barcelona", 91);
-tm1.addPlayer(pl12);
-var pl21 = new Player("Vinicius jr", "Real Madrid", 86);
-tm2.addPlayer(pl21);
-var pl22 = new Player("Benzema", "Real Madrid", 91);
-tm2.addPlayer(pl22);
-gamesim(tm1, tm2);
+  
+  var allTeams = [];
+  var PlayerTeam;
+  
+  
+  allTeams.push(Barca = new Team("Barcelona", "LaLiga"));
+  allTeams.push(RealM = new Team("Real Madrid", "LaLiga"));
+  allTeams.push(AtleticoM = new Team("Atletico Madrid", "Laliga"));
+  allTeams.push(Sevilla = new Team("Sevilla", "Laliga"));
+  allTeams.push(Sevilla = new Team("Real Sociedad", "Laliga"));
+  Barca.addPlayer(Lewa = new Player("Lewandowski", "FC Barcelona", 91));
+  RealM.addPlayer(Benzema = new Player("Benzema", "Real Madrid", 91));
+  AtleticoM.addPlayer(Oblak = new Player( "Obalk", "Atletico Madrid", 88))
+  Sevilla.addPlayer(Oblak = new Player( "Andre Gomez", "Sevilla", 85))
+  Sevilla.addPlayer(Oblak = new Player( "	Oyarzabal", "Real Sociedad", 85))
+  
+  
+  function Teamwahl(teamchoose){
+    allTeams.forEach(Team => {
+      if(Team.name == teamchoose.id){
+         PlayerTeam = Team.name;
+      }
+    });
+    document.getElementById("Saisonsim").innerHTML = "Saison mit " + PlayerTeam + " starten";
+    console.log(PlayerTeam)
+}
 
 function gamesim(Home, Away){
   let goalshome = 0;
