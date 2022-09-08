@@ -24,10 +24,6 @@ a{
 .score{
     font-size: 100px;
 }
-.Logo{
-    width: 300px;
-    height: 300px;
-}
 .Teamliste{
     display: flex;
     justify-content: space-between;
@@ -41,7 +37,7 @@ a{
     border-radius: 20px;
     padding: 20px;
     margin: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .Containerteams{
     display: flex;

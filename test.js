@@ -1,9 +1,10 @@
 
 class Team {
-    constructor(name, league) {
+    constructor(name, league, imgsrc) {
       this.name = name;
       this.league = league;
       this.players = [];
+      this.imgsrc = imgsrc;
     }
     get rating() {
       return this.clacRating()
@@ -36,18 +37,26 @@ class Team {
   var PlayerTeam;
   
   
-  allTeams.push(Barca = new Team("Barcelona", "LaLiga"));
-  allTeams.push(RealM = new Team("Real Madrid", "LaLiga"));
-  allTeams.push(AtleticoM = new Team("Atletico Madrid", "Laliga"));
-  allTeams.push(Sevilla = new Team("Sevilla", "Laliga"));
-  allTeams.push(Sevilla = new Team("Real Sociedad", "Laliga"));
-  Barca.addPlayer(Lewa = new Player("Lewandowski", "FC Barcelona", 91));
-  RealM.addPlayer(Benzema = new Player("Benzema", "Real Madrid", 91));
-  AtleticoM.addPlayer(Oblak = new Player( "Obalk", "Atletico Madrid", 88))
-  Sevilla.addPlayer(Oblak = new Player( "Andre Gomez", "Sevilla", 85))
-  Sevilla.addPlayer(Oblak = new Player( "	Oyarzabal", "Real Sociedad", 85))
+  allTeams.push(Barca = new Team("Barcelona", "LaLiga", "Bilder/Barca.png"));
+  allTeams.push(RealM = new Team("Real Madrid", "LaLiga", "Bilder/Real.png"));
+  allTeams.push(AtleticoM = new Team("Atletico Madrid", "Laliga", "Bilder/Atletico Madrid.png"));
+  allTeams.push(Sevilla = new Team("Sevilla", "Laliga", "Bilder/Sevilla.png"));
+  allTeams.push(RealS = new Team("Real Sociedad", "Laliga", "Bilder/Real Sociedad.png"));
   
+  function CreatePlayers(){
+    Barca.addPlayer(Lewa = new Player("Lewandowski", "FC Barcelona", 91));
+    RealM.addPlayer(Benzema = new Player("Benzema", "Real Madrid", 91));
+    AtleticoM.addPlayer(Oblak = new Player( "Obalk", "Atletico Madrid", 88))
+    Sevilla.addPlayer(AndreG = new Player( "Andre Gomez", "Sevilla", 85))
+    RealS.addPlayer(Oyarzabal = new Player( "Oyarzabal", "Real Sociedad", 85))
   
+  }
+  function StartSaison(){
+    location.href = 'Saisonsim.html';
+    CreatePlayers();
+    console.log("Hello World");
+  }
+
   function Teamwahl(teamchoose){
     allTeams.forEach(Team => {
       if(Team.name == teamchoose.id){
