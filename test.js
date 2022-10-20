@@ -37,11 +37,12 @@ class Team {
   var PlayerTeam;
   
   
-  allTeams.push(Barca = new Team("Barcelona", "LaLiga", "Bilder/Barca.png"));
-  allTeams.push(RealM = new Team("Real Madrid", "LaLiga", "Bilder/Real.png"));
-  allTeams.push(AtleticoM = new Team("Atletico Madrid", "Laliga", "Bilder/Atletico Madrid.png"));
-  allTeams.push(Sevilla = new Team("Sevilla", "Laliga", "Bilder/Sevilla.png"));
-  allTeams.push(RealS = new Team("Real Sociedad", "Laliga", "Bilder/Real Sociedad.png"));
+    allTeams.push(Barca = new Team("Barcelona", "LaLiga", "Bilder/Barca.png"));
+    allTeams.push(RealM = new Team("Real Madrid", "LaLiga", "Bilder/Real.png"));
+    allTeams.push(AtleticoM = new Team("Atletico Madrid", "Laliga", "Bilder/Atletico Madrid.png"));
+    allTeams.push(Sevilla = new Team("Sevilla", "Laliga", "Bilder/Sevilla.png"));
+    allTeams.push(RealS = new Team("Real Sociedad", "Laliga", "Bilder/Real Sociedad.png"));
+  
   
   function CreatePlayers(){
     Barca.addPlayer(Lewa = new Player("Lewandowski", "FC Barcelona", 91));
@@ -51,11 +52,7 @@ class Team {
     RealS.addPlayer(Oyarzabal = new Player( "Oyarzabal", "Real Sociedad", 85))
   
   }
-  function StartSaison(){
-    location.href = 'Saisonsim.html';
-    CreatePlayers();
-    console.log("Hello World");
-  }
+  
 
   function Teamwahl(teamchoose){
     allTeams.forEach(Team => {
@@ -71,12 +68,12 @@ function gamesim(Home, Away){
   let goalshome = 0;
   let goalsaway = 0;
   console.log(Home);
-  Home.players.forEach(player => {
-    document.getElementById('Hometm').innerHTML += "<p>" + player.name + " " + player.rating+ "</p>";
-  });
-  Away.players.forEach(player => {
-    document.getElementById('Awaytm').innerHTML += "<p>" + player.name + " " + player.rating+ "</p>";
-  });
+  //Home.players.forEach(player => {
+    //document.getElementById('Hometm').innerHTML += "<p>" + player.name + " " + player.rating+ "</p>";
+  //});
+  //Away.players.forEach(player => {
+    //document.getElementById('Awaytm').innerHTML += "<p>" + player.name + " " + player.rating+ "</p>";
+  //});
   for(let minutes = 0; minutes < 90; minutes++){
     //Laliga Durchschnittlich 2.5 Goals pro Match
     //jede Minute 0.0277777% Chanche uf Goal
@@ -88,7 +85,10 @@ function gamesim(Home, Away){
       }
     }
   }
-  document.getElementById('score').innerHTML = goalshome + ":" + goalsaway;
+  console.log(goalshome +""+ goalsaway);
 }
 
-
+function StartSaison(){
+  //document.getElementById("Teamlogo").hidden = true;
+  document.getElementById("Teamlogo").style.visibility = "hidden";
+}
