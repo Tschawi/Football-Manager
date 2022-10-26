@@ -52,5 +52,6 @@ a{
     height: 5%;
     width: 5%;
     margin: 10px;
+    display: flex;
 }
 

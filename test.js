@@ -89,6 +89,8 @@ function gamesim(Home, Away){
 }
 
 function StartSaison(){
-  //document.getElementById("Teamlogo").hidden = true;
-  document.getElementById("Teamlogo").style.visibility = "hidden";
+  document.getElementsByClassName("Teamlogo").remove();
+  //document.getElementsByClassName("Teamlogo").hidden = true;
+  //document.getElementsByClassName("Teamlogo").style.visibility = "hidden";
+  console.log("Gugu");
 }
